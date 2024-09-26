@@ -49,9 +49,9 @@ jobs:
         name: version
 
     - name: Upload to PyPI
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      # env:
+      #   TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+      #   TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         cat version.txt
         VERSION=$(cat version.txt)
