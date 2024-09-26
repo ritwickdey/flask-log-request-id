@@ -102,9 +102,9 @@ test_requirements = [
 ]
 
 setup(
-    name='Flask-Log-Request-ID',
+    name='Flask-3-Log-Request-ID',
     version=version,
-    url='http://github.com/Workable/flask-log-request-id',
+    url='http://github.com/ritwickdey/flask-log-request-id',
     license='MIT',
     author='Konstantinos Paliouras, Ioannis Foukarakis',
     author_email='squarious@gmail.com, ioannis.foukarakis@gmail.com',
@@ -126,7 +126,7 @@ setup(
     tests_require=test_requirements,
     setup_requires=[
         "flake8",
-        "nose"
+        "nose",
     ],
     extras_require={
         'test': test_requirements

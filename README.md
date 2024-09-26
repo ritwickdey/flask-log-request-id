@@ -1,5 +1,5 @@
 
-# Flask-Log-Request-Id
+# Flask-3-Log-Request-Id
 
 [![CircleCI](https://img.shields.io/circleci/project/github/Workable/flask-log-request-id.svg)](https://circleci.com/gh/Workable/flask-log-request-id)
 
@@ -15,12 +15,12 @@ greatly improve tracing and debugging of problems.
 The easiest way to install it is using ``pip`` from PyPI
 
 ```bash
-pip install flask-log-request-id
+pip install flask-3-log-request-id
 ```
 
 ## Usage
 
-Flask-Log-Request-Id provides the `current_request_id()` function which can be used at any time to get the request
+Flask-3-Log-Request-Id provides the `current_request_id()` function which can be used at any time to get the request
 id of the initiated execution chain.
 
 
