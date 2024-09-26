@@ -1,6 +1,8 @@
 
 # Flask-3-Log-Request-Id
 
+> This is a fork of [Flask-Log-Request-ID](https://pypi.org/project/Flask-Log-Request-ID/) to support Flask v3 (with backward compatibility). Original libary doesn't work with Flask 3. [Issue Request](https://github.com/Workable/flask-log-request-id/issues/58).... Once [this PR](https://github.com/Workable/flask-log-request-id/pull/65) gets merged,  I would be glad to transition back to the original library.
+
 [![CircleCI](https://img.shields.io/circleci/project/github/Workable/flask-log-request-id.svg)](https://circleci.com/gh/Workable/flask-log-request-id)
 
 **Flask-Log-Request-Id** is an extension for [Flask](http://flask.pocoo.org/) that can parse and handle the

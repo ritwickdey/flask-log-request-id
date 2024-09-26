@@ -1,8 +1,9 @@
 """
+.. note:: 
+    This is a fork of `Flask-Log-Request-ID <https://pypi.org/project/Flask-Log-Request-ID/>`_ to support Flask v3 (with backward compatibility). Original library doesn't work with Flask 3. `Issue Request <https://github.com/Workable/flask-log-request-id/issues/58>`_.... Once `this PR <https://github.com/Workable/flask-log-request-id/pull/65>`_ gets merged, I would be glad to transition back to the original library.
+
 Flask-Log-Request-Id
 ====================
-
-|CircleCI|
 
 **Flask-Log-Request-Id** is an extension for `Flask`_ that can parse and handle
 the request-id sent by request processors like `Amazon ELB`_, `Heroku Request-ID`_
@@ -79,10 +80,8 @@ See the `LICENSE`_ file for license rights and limitations (MIT).
 .. _Heroku Request-ID: https://devcenter.heroku.com/articles/http-request-id
 .. _python logging system: https://docs.python.org/3/library/logging.html
 .. _LICENSE: https://github.com/Workable/flask-log-request-id/blob/master/LICENSE.md
-.. |CircleCI| image:: https://img.shields.io/circleci/project/github/Workable/flask-log-request-id.svg
-   :target: https://circleci.com/gh/Workable/flask-log-request-id
 
-"""
+"""  # noqa
 import re
 import ast
 from setuptools import setup
@@ -106,14 +105,14 @@ setup(
     version=version,
     url='http://github.com/ritwickdey/flask-log-request-id',
     license='MIT',
-    author='Konstantinos Paliouras, Ioannis Foukarakis',
-    author_email='squarious@gmail.com, ioannis.foukarakis@gmail.com',
+    author='Ritwick Dey',
+    author_email='ritwickdey@outlook.com',
     description='Flask extension that can parse and handle multiple types of request-id '
                 'sent by request processors like Amazon ELB, Heroku or any multi-tier '
                 'infrastructure as the one used for microservices.',
     long_description=__doc__,
-    maintainer="Konstantinos Paliouras",
-    maintainer_email="squarious@gmail.com",
+    maintainer="Ritwick Dey",
+    maintainer_email="ritwickdey@outlook.com",
     packages=[
         'flask_log_request_id',
         'flask_log_request_id.extras'],
