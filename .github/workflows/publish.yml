@@ -5,8 +5,11 @@ on:
     tags:
       - '*'
 jobs:
-  build:
+  build_and_deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.8
@@ -21,49 +24,19 @@ jobs:
         rm -rf dist/
         python -m build
         python setup.py --version > version.txt
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: dist
-        path: dist/
+        
     - name: Upload version file
       uses: actions/upload-artifact@v3
       with:
         name: version
         path: version.txt
 
-  deploy_pypi:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Download build artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: dist
-
-    - name: Download version file
-      uses: actions/download-artifact@v3
-      with:
-        name: version
-
     - name: Upload to PyPI
-      # env:
-      #   TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-      #   TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        cat version.txt
-        VERSION=$(cat version.txt)
-        python3 -m venv venv
-        . venv/bin/activate
-        pip install -U pip setuptools twine
-        twine upload dist/*
+      uses: pypa/gh-action-pypi-publish@release/v1
 
   install_from_pypi:
     runs-on: ubuntu-latest
-    needs: deploy_pypi
+    needs: build_and_deploy
 
     steps:
     - uses: actions/checkout@v3
@@ -75,6 +48,7 @@ jobs:
 
     - name: Install from PyPI
       run: |
+        ls -la
         cat version.txt
         python3 -m venv venv
         . venv/bin/activate
