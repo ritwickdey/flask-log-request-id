@@ -4,7 +4,7 @@ from .filters import RequestIDLogFilter
 from . import parser
 
 
-__version__ = '0.11.0'
+__version__ = '0.11.1'
 
 
 __all__ = [
