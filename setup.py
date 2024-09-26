@@ -94,11 +94,11 @@ with open('flask_log_request_id/__init__.py', 'rb') as f:
         f.read().decode('utf-8')).group(1)))
 
 test_requirements = [
-    'nose',
+    'pynose',
     'flake8',
     'mock==2.0.0',
     'coverage~=4.5.4',
-    'celery~=4.3.0'
+    'celery'
 ]
 
 setup(
@@ -123,15 +123,15 @@ setup(
     install_requires=[
         'Flask>=0.8',
     ],
-    tests_require=test_requirements,
+    # tests_require=test_requirements,
     setup_requires=[
         "flake8",
-        "nose",
+        "pynose",
     ],
     extras_require={
         'test': test_requirements
     },
-    test_suite='nose.collector',
+    # test_suite='nose.collector',
     classifiers=[
         'Environment :: Web Environment', 'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
